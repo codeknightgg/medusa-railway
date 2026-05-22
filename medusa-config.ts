@@ -37,7 +37,6 @@ module.exports = defineConfig({
               access_key_id: process.env.S3_ACCESS_KEY_ID,
               secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
             },
-            },
           },
         ],
       },
