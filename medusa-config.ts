@@ -28,5 +28,16 @@ module.exports = defineConfig({
   },
   modules: [
     { key: "api_key", resolve: "@medusajs/medusa/api-key" },
+    {
+      resolve: "@medusajs/file-s3",
+      options: {
+        s3_url: process.env.S3_URL,
+        endpoint: process.env.S3_ENDPOINT,
+        bucket: process.env.S3_BUCKET,
+        region: "us-east-1",
+        access_key_id: process.env.S3_ACCESS_KEY_ID,
+        secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
+      },
+    },
   ],
 })
