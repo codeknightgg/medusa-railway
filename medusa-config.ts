@@ -20,7 +20,6 @@ module.exports = defineConfig({
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
   },
   modules: [
-    { key: "api_key", resolve: "@medusajs/medusa/api-key" },
     {
       resolve: "@medusajs/file",
       options: {
@@ -29,14 +28,14 @@ module.exports = defineConfig({
             resolve: "@medusajs/file-s3",
             id: "s3",
             options: {
-              s3_url: process.env.S3_URL,
-              file_url: process.env.S3_URL,
-              endpoint: process.env.S3_ENDPOINT,
               bucket: process.env.S3_BUCKET,
               region: "us-east-1",
+              endpoint: process.env.S3_ENDPOINT,
               access_key_id: process.env.S3_ACCESS_KEY_ID,
               secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
-              force_path_style: true,
+              additional_client_config: {
+                forcePathStyle: true,
+              },
             },
           },
         ],
