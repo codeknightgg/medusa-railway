@@ -33,6 +33,7 @@ module.exports = defineConfig({
               endpoint: process.env.S3_ENDPOINT,
               access_key_id: process.env.S3_ACCESS_KEY_ID,
               secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
+              file_url: process.env.S3_URL,
               additional_client_config: {
                 forcePathStyle: true,
               },
